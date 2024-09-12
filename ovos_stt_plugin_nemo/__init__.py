@@ -108,7 +108,7 @@ class NemoSTT(STT):
                 model = MODEL2URL[model]
             if model.startswith("http"):
                 model = self.download(model)
-            if not os.path.isfile(model):
+            elif not os.path.isfile(model):
                 raise FileNotFoundError(f"'model' file does not exist - {model}")
             self.asr_model = nemo_asr.models.EncDecCTCModelBPE.restore_from(model)
         else:

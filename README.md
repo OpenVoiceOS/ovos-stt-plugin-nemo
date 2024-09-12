@@ -36,6 +36,21 @@ Pre-trained models from:
 - [AINA](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) (catalan)
 - [NeonGeckoCom](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) - `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt', 'ca'`
 
+NVidia default models from nemo toolkit:
+- `"stt_en_jasper10x5dr"`
+- `"stt_en_quartznet15x5"`
+- `"QuartzNet15x5Base-En"`
+- `"stt_es_quartznet15x5"`
+- `"stt_fr_quartznet15x5"`
+- `"stt_ca_quartznet15x5"`
+- `"stt_de_quartznet15x5"`
+- `"stt_pl_quartznet15x5"`
+- `"stt_it_quartznet15x5"`
+- `"stt_ru_quartznet15x5"`
+- `"stt_zh_citrinet_512"`
+
+external models will be downloaded on demand to `~/.local/share/nemo_stt_models`:
+
 ```python
 {
     "stt-ca-citrinet-512": "https://huggingface.co/projecte-aina/stt-ca-citrinet-512/resolve/main/stt-ca-citrinet-512.nemo",

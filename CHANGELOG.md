@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.1a1) (2024-09-12)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.0a1...0.2.1a1)
+
+**Merged pull requests:**
+
+- fix:reported\_lang\_support [\#3](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/3) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.0a1) (2024-09-12)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.1.0...0.2.0a1)

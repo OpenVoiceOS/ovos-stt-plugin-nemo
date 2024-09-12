@@ -3,7 +3,7 @@
 
 ## Description
 
-OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/models.html#citrinet), GPU is **strongly recommended**
+OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/models.html), GPU is **strongly recommended**
 
 > **NOTE**: for onnx converted models use [ovos-stt-citrinet-plugin](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet) instead
 

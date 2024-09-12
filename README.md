@@ -30,6 +30,8 @@ if `"model"` is not set, it will be automatically selected based on language
 
 ### Models
 
+Supported languages: `'en', 'es', 'ca', 'fr', 'de', 'pl', 'it', 'ru', 'zh', 'nl', 'uk', 'pt', 'eu', 'eo', 'be', 'hr', 'rw', 'fa', 'ua'`
+
 Pre-trained models from:
 - [Nvidia](https://ngc.nvidia.com/catalog/models/nvidia:nemospeechmodels)
 - [HiTz](https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large) (basque)

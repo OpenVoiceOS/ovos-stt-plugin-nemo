@@ -101,13 +101,13 @@ class NemoSTT(STT):
         lang = self.lang.split("-")[0]
         if not model and lang in LANG2MODEL:
             model = LANG2MODEL[lang]
+        if not model:
+            raise ValueError(f"'lang' {lang} not supported, a 'model' needs to be explicitly set in config file")
         if model not in PRETRAINED:
             if model in MODEL2URL:
                 model = MODEL2URL[model]
             if model.startswith("http"):
                 model = self.download(model)
-            if not model:
-                raise ValueError(f"'model' not set in config file")
             if not os.path.isfile(model):
                 raise FileNotFoundError(f"'model' file does not exist - {model}")
             self.asr_model = nemo_asr.models.EncDecCTCModelBPE.restore_from(model)
@@ -135,7 +135,7 @@ class NemoSTT(STT):
 
     @property
     def available_languages(self) -> set:
-        return {"eu-es"}
+        return set(LANG2MODEL.keys())
 
     def execute(self, audio: AudioData, language: Optional[str] = None):
         with NamedTemporaryFile("wb", suffix=".wav") as f:

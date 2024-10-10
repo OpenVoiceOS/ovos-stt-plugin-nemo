@@ -5,7 +5,6 @@
 
 OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/models.html), GPU is **strongly recommended**
 
-Online demo for [HiTZ/Aholab's Basque Speech-to-Text](https://huggingface.co/spaces/HiTZ/Demo_Basque_ASR)
 
 > **NOTE**: for onnx converted models use [ovos-stt-citrinet-plugin](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet) instead
 

@@ -23,7 +23,7 @@ LANG2MODEL = {
     "nl": "stt_nl_citrinet_512_gamma_0_25",
     "uk": "stt_uk_citrinet_512_gamma_0_25",
     "pt": "stt_pt_citrinet_512_gamma_0_25",
-    "eu": "stt_eu_conformer_transducer_large",
+    "eu": "stt_eu_conformer_ctc_large",
     "eo": "stt_eo_conformer_ctc_large",
     "be": "stt_be_conformer_ctc_large",
     "hr": "stt_hr_conformer_ctc_large",
@@ -161,15 +161,3 @@ class NemoSTT(STT):
         return transcriptions[0]
 
 
-if __name__ == "__main__":
-    b = NemoSTT({"lang": "eu"})
-    from speech_recognition import Recognizer, AudioFile
-
-    eu = "/home/miro/PycharmProjects/ovos-stt-nemo-plugin/es.wav"
-    ca = "/home/miro/PycharmProjects/ovos-stt-plugin-vosk/example.wav"
-    with AudioFile(eu) as source:
-        audio = Recognizer().record(source)
-
-    a = b.execute(audio, language="eu")
-    print(a)
-    # asko eskertzen dut nirekin denbora ematea baina orain alde egin behar dut laster zurekin harrapatuko dudala agintzen dizut

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.3a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.3a1) (2024-10-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.2a1...0.2.3a1)
+
+**Merged pull requests:**
+
+- fix:explicit GPU support [\#7](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/7) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.2a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.2a1) (2024-10-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.1...0.2.2a1)

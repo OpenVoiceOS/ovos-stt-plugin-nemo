@@ -18,7 +18,8 @@ OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-gu
   "stt": {
     "module": "ovos-stt-plugin-nemo",
     "ovos-stt-plugin-nemo": {
-        "model": "stt_eu_conformer_ctc_large"
+        "model": "stt_eu_conformer_ctc_large",
+        "use_cuda": false
     }
   }
 ```

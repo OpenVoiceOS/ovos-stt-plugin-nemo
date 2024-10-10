@@ -105,11 +105,6 @@ class NemoSTT(STT):
         if not model:
             raise ValueError(f"'lang' {lang} not supported, a 'model' needs to be explicitly set in config file")
 
-        # Load model with CUDA if available
-        import torch
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        if device == "cuda":
-            LOG.debug("Loading nemo model in GPU")
         if model not in PRETRAINED:
             if model in MODEL2URL:
                 model = MODEL2URL[model]
@@ -121,7 +116,18 @@ class NemoSTT(STT):
             # no need to worry about EncDecRNNTBPEModel vs EncDecCTCModelBPE vs ....
             self.asr_model = nemo_asr.models.EncDecCTCModelBPE.restore_from(model)
         else:
-            self.asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name=model, map_location=device)
+            self.asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name=model)
+
+        # Load model with CUDA if available
+        if self.config.get("use_cuda"):
+            import torch
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            if device == "cuda":
+                LOG.debug("Loading nemo model in GPU")
+                self.asr_model.to(device)
+            else:
+                LOG.warning("'use_cuda' is set in config, but GPU is not available")
+
         self.batch_size = self.config.get("batch_size", 8)
 
     @staticmethod
@@ -159,5 +165,4 @@ class NemoSTT(STT):
         if isinstance(transcriptions[0], list):  # observed in EncDecRNNTBPEModels
             return transcriptions[0][0]
         return transcriptions[0]
-
 

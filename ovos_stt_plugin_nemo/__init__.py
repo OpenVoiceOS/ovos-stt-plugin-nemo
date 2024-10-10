@@ -53,6 +53,7 @@ MODEL2URL = {
     "stt_en_citrinet_1024_gamma_0_25": "https://huggingface.co/nvidia/stt_en_citrinet_1024_gamma_0_25/resolve/main/stt_en_citrinet_1024_gamma_0_25.nemo",
     "stt_zh_citrinet_1024_gamma_0_25": "https://huggingface.co/nvidia/stt_zh_citrinet_1024_gamma_0_25/resolve/main/stt_zh_citrinet_1024_gamma_0_25.nemo",
 
+    "stt_eu_conformer_transducer_large": "https://huggingface.co/HiTZ/stt_eu_conformer_transducer_large/resolve/main/stt_eu_conformer_transducer_large.nemo",
     "stt_eu_conformer_ctc_large": "https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large/resolve/main/stt_eu_conformer_ctc_large.nemo",
     "stt_en_conformer_ctc_small": "https://huggingface.co/nvidia/stt_en_conformer_ctc_small/resolve/main/stt_en_conformer_ctc_small.nemo",
     "stt_en_conformer_ctc_large": "https://huggingface.co/nvidia/stt_en_conformer_ctc_large/resolve/main/stt_en_conformer_ctc_large.nemo",
@@ -103,6 +104,7 @@ class NemoSTT(STT):
             model = LANG2MODEL[lang]
         if not model:
             raise ValueError(f"'lang' {lang} not supported, a 'model' needs to be explicitly set in config file")
+
         if model not in PRETRAINED:
             if model in MODEL2URL:
                 model = MODEL2URL[model]
@@ -110,9 +112,22 @@ class NemoSTT(STT):
                 model = self.download(model)
             elif not os.path.isfile(model):
                 raise FileNotFoundError(f"'model' file does not exist - {model}")
+            # the class used here doesnt matter, when restoring from file the correct one is loaded regardless
+            # no need to worry about EncDecRNNTBPEModel vs EncDecCTCModelBPE vs ....
             self.asr_model = nemo_asr.models.EncDecCTCModelBPE.restore_from(model)
         else:
             self.asr_model = nemo_asr.models.EncDecCTCModel.from_pretrained(model_name=model)
+
+        # Load model with CUDA if available
+        if self.config.get("use_cuda"):
+            import torch
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            if device == "cuda":
+                LOG.debug("Loading nemo model in GPU")
+                self.asr_model.to(device)
+            else:
+                LOG.warning("'use_cuda' is set in config, but GPU is not available")
+
         self.batch_size = self.config.get("batch_size", 8)
 
     @staticmethod
@@ -146,18 +161,8 @@ class NemoSTT(STT):
         if not transcriptions:
             LOG.debug("Transcription is empty")
             return None
+
+        if isinstance(transcriptions[0], list):  # observed in EncDecRNNTBPEModels
+            return transcriptions[0][0]
         return transcriptions[0]
 
-
-if __name__ == "__main__":
-    b = NemoSTT({"lang": "eu"})
-    from speech_recognition import Recognizer, AudioFile
-
-    eu = "/home/miro/PycharmProjects/ovos-stt-conformer-ctc-plugin/es.wav"
-    ca = "/home/miro/PycharmProjects/ovos-stt-plugin-vosk/example.wav"
-    with AudioFile(eu) as source:
-        audio = Recognizer().record(source)
-
-    a = b.execute(audio, language="eu")
-    print(a)
-    # asko eskertzen dut nirekin denbora ematea baina orain alde egin behar dut laster zurekin harrapatuko dudala agintzen dizut

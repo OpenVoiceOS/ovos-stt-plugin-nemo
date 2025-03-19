@@ -164,5 +164,5 @@ class NemoSTT(STT):
 
         if isinstance(transcriptions[0], list):  # observed in EncDecRNNTBPEModels
             return transcriptions[0][0]
-        return transcriptions[0]
+        return transcriptions[0].text
 

@@ -5,6 +5,7 @@ from typing import Optional
 import nemo.collections.asr as nemo_asr
 import requests
 from ovos_plugin_manager.templates.stt import STT
+from ovos_utils import classproperty
 from ovos_utils.log import LOG
 from ovos_utils.xdg_utils import xdg_data_home
 from speech_recognition import AudioData
@@ -148,8 +149,8 @@ class NemoSTT(STT):
                             f.write(chunk)
         return file_path
 
-    @property
-    def available_languages(self) -> set:
+    @classproperty
+    def available_languages(cls) -> set:
         return set(LANG2MODEL.keys())
 
     def execute(self, audio: AudioData, language: Optional[str] = None):
@@ -165,4 +166,3 @@ class NemoSTT(STT):
         if isinstance(transcriptions[0], list):  # observed in EncDecRNNTBPEModels
             return transcriptions[0][0]
         return transcriptions[0].text
-

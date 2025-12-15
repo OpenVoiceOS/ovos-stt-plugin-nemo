@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.2.5a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.5a1) (2025-06-08)
+## [0.2.6a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a1) (2025-12-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.4...0.2.5a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.5...0.2.6a1)
 
 **Merged pull requests:**
 
-- fix: compatibility with ovos-plugin-manager 1.X.X [\#13](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+- Update version constraints in requirements.txt [\#15](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/15) ([JarbasAl](https://github.com/JarbasAl))
 
 
 

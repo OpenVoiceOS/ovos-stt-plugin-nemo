@@ -8,7 +8,7 @@ from ovos_plugin_manager.templates.stt import STT
 from ovos_utils import classproperty
 from ovos_utils.log import LOG
 from ovos_utils.xdg_utils import xdg_data_home
-from speech_recognition import AudioData
+from ovos_plugin_manager.utils.audio import AudioData, AudioFile
 
 PRETRAINED = [m.pretrained_model_name for m in nemo_asr.models.EncDecCTCModel.list_available_models()]
 LANG2MODEL = {

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.6a4](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a4) (2026-01-09)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a3...0.2.6a4)
+
+**Merged pull requests:**
+
+- refactor: modernize/drop speech\_recognition [\#26](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/26) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.6a3](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a3) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a2...0.2.6a3)

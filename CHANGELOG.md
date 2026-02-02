@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a5) (2026-02-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a5)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/setup-python action to v6 [\#23](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/23) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v6 [\#22](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/22) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.2.6a4](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a4) (2026-01-09)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a3...0.2.6a4)

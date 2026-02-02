@@ -1,8 +1,8 @@
 # Changelog
 
-## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a5) (2026-02-02)
+## [0.2.6a6](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a6) (2026-02-02)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a5)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a6)
 
 **Merged pull requests:**
 

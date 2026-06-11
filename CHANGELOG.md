@@ -1,8 +1,20 @@
 # Changelog
 
+## [0.2.6a7](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a7) (2026-06-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a6...0.2.6a7)
+
+**Merged pull requests:**
+
+- docs: add TigreGotico attribution, link ILENIA [\#29](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/29) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.6a6](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a6) (2026-02-02)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a6)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a5...0.2.6a6)
+
+## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a5) (2026-02-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a5)
 
 **Merged pull requests:**
 

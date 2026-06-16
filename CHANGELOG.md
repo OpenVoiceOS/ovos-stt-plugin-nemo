@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.6a8](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a8) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a7...0.2.6a8)
+
+**Merged pull requests:**
+
+- chore: add missing shared CI workflows [\#30](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/30) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.6a7](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a7) (2026-06-11)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a6...0.2.6a7)

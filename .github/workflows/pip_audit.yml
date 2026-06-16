@@ -1,0 +1,15 @@
+name: PIP Audit
+
+on:
+  pull_request:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  pip_audit:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/pip-audit.yml@dev
+    secrets: inherit
+    with:
+      # nemo_toolkit[all]/megatron_core only install & import cleanly on 3.10-3.11
+      # (3.12+ hit a nvidia-resiliency-ext/grpcio ResolutionImpossible; numba has no 3.14 wheel).
+      python_version: '3.11'

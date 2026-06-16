@@ -10,6 +10,10 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/build-tests.yml@dev
     secrets: inherit
     with:
-      python_versions: '["3.10", "3.11", "3.12"]'
+      # nemo_toolkit[all] / megatron_core require nvidia-resiliency-ext>=0.6.0, which is
+      # unresolvable with nemo's other pins (grpcio>=1.76.0 conflict -> ResolutionImpossible),
+      # so 3.12+ cannot install/import the stack. numba (transitive) has no 3.14 wheel either.
+      # 3.10 and 3.11 are the only Pythons where the stack installs, imports, and the test runs.
+      python_versions: '["3.10", "3.11"]'
       install_extras: 'test'
       test_path: 'test'

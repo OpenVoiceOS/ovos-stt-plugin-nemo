@@ -9,3 +9,8 @@ jobs:
   pip_audit:
     uses: OpenVoiceOS/gh-automations/.github/workflows/pip-audit.yml@dev
     secrets: inherit
+    with:
+      # nemo_toolkit pulls in numba, which only supports Python <3.14.
+      # The default (3.14) cannot install the ML stack, so pin to a version
+      # the nemo stack actually installs/imports on (matches build-tests matrix).
+      python_version: '3.12'

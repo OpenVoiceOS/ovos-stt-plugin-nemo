@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.6a9](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a9) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a8...0.2.6a9)
+
+**Merged pull requests:**
+
+- ci: exclude NVIDIA CUDA/ML-backend deps from license gate [\#33](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/33) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.6a8](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a8) (2026-06-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a7...0.2.6a8)

@@ -1,12 +1,81 @@
 # Changelog
 
-## [0.2.5a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.5a1) (2025-06-08)
+## [0.2.6a10](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a10) (2026-08-01)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.4...0.2.5a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a9...0.2.6a10)
 
 **Merged pull requests:**
 
-- fix: compatibility with ovos-plugin-manager 1.X.X [\#13](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+- docs: rewrite README in Simplified Technical English [\#36](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/36) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a9](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a9) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a8...0.2.6a9)
+
+**Merged pull requests:**
+
+- ci: exclude NVIDIA CUDA/ML-backend deps from license gate [\#33](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/33) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a8](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a8) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a7...0.2.6a8)
+
+**Merged pull requests:**
+
+- chore: add missing shared CI workflows [\#30](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/30) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a7](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a7) (2026-06-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a6...0.2.6a7)
+
+**Merged pull requests:**
+
+- docs: add TigreGotico attribution, link ILENIA [\#29](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/29) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a6](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a6) (2026-02-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a5...0.2.6a6)
+
+## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a5) (2026-02-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a4...0.2.6a5)
+
+**Merged pull requests:**
+
+- chore\(deps\): update actions/setup-python action to v6 [\#23](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/23) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v6 [\#22](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/22) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.2.6a4](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a4) (2026-01-09)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a3...0.2.6a4)
+
+**Merged pull requests:**
+
+- refactor: modernize/drop speech\_recognition [\#26](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/26) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a3](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a3) (2025-12-19)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a2...0.2.6a3)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency python to 3.14 [\#18](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/18) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.2.6a2](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a2) (2025-12-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a1...0.2.6a2)
+
+**Merged pull requests:**
+
+- chore: Configure Renovate [\#17](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/17) ([renovate[bot]](https://github.com/apps/renovate))
+
+## [0.2.6a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a1) (2025-12-15)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.5...0.2.6a1)
+
+**Merged pull requests:**
+
+- Update version constraints in requirements.txt [\#15](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/15) ([JarbasAl](https://github.com/JarbasAl))
 
 
 

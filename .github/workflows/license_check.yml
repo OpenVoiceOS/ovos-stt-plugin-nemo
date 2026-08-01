@@ -1,0 +1,24 @@
+name: License Check
+
+on:
+  pull_request:
+    branches: [dev]
+  workflow_dispatch:
+
+jobs:
+  license_check:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/license-check.yml@dev
+    secrets: inherit
+    with:
+      # nemo_toolkit[all]/megatron_core only install & import cleanly on 3.10-3.11
+      # (3.12+ hit a nvidia-resiliency-ext/grpcio ResolutionImpossible; numba has no 3.14 wheel).
+      python_version: '3.11'
+      # nemo_toolkit[all] pulls torch -> NVIDIA CUDA runtime wheels (proprietary-but-
+      # redistributable) plus several transitive deps that ship no parseable license
+      # metadata ("Error") or are copyleft used unmodified as imported libraries. None
+      # are direct deps of this Apache-2.0 plugin; exclude them from the gate.
+      # docutils/sentencepiece are permissive but their multi-license metadata strings
+      # trip the copyleft detector. paramiko/soxr (LGPL) and text-unidecode (GPL/Artistic)
+      # are unmodified imported libraries pulled by the nemo backend.
+      exclude_packages: >-
+        (?i:^nvidia-.*([=<>!~ @;].*)?$)|(?i:^nvtx([=<>!~ @;].*)?$)|(?i:^cuda-bindings([=<>!~ @;].*)?$)|(?i:^cuda-toolkit([=<>!~ @;].*)?$)|(?i:^leptonai([=<>!~ @;].*)?$)|(?i:^mypy[-_]extensions([=<>!~ @;].*)?$)|(?i:^nemo[-_]run([=<>!~ @;].*)?$)|(?i:^nerfacc([=<>!~ @;].*)?$)|(?i:^docutils([=<>!~ @;].*)?$)|(?i:^paramiko([=<>!~ @;].*)?$)|(?i:^sentencepiece([=<>!~ @;].*)?$)|(?i:^soxr([=<>!~ @;].*)?$)|(?i:^text[-_]unidecode([=<>!~ @;].*)?$)

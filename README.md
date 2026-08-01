@@ -1,12 +1,10 @@
 # OVOS Nemo STT
 
-
 ## Description
 
-OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/models.html), GPU is **strongly recommended**
+This is an OpenVoiceOS speech-to-text (STT) plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-guide/latest/nemotoolkit/asr/models.html). A GPU is **strongly recommended**.
 
-
-> **NOTE**: for onnx converted models use [ovos-stt-citrinet-plugin](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet) instead
+> **NOTE**: for onnx converted models, use [ovos-stt-plugin-citrinet](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet) instead.
 
 ## Install
 
@@ -24,21 +22,21 @@ OpenVoiceOS STT plugin for [Nemo](https://docs.nvidia.com/nemo-framework/user-gu
   }
 ```
 
-> `"model"` can be a full path or url to a `.nemo` file, or a pretrained model id (see list below)
+The `"model"` value can be a full path or URL to a `.nemo` file, or a pretrained model ID (see the list below).
 
-if `"model"` is not set, it will be automatically selected based on language
+If you do not set `"model"`, the plugin selects a model automatically based on the configured language.
 
 ### Models
 
 Supported languages: `'en', 'es', 'ca', 'fr', 'de', 'pl', 'it', 'ru', 'zh', 'nl', 'uk', 'pt', 'eu', 'eo', 'be', 'hr', 'rw', 'fa', 'ua'`
 
-Pre-trained models from:
+Pre-trained models come from:
 - [Nvidia](https://ngc.nvidia.com/catalog/models/nvidia:nemospeechmodels)
-- [HiTz](https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large) (basque)
-- [AINA](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) (catalan)
+- [HiTZ](https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large) (Basque)
+- [AINA](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) (Catalan)
 - [NeonGeckoCom](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) - `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt', 'ca'`
 
-NVidia default models from nemo toolkit:
+Nvidia default models from the Nemo toolkit:
 - `"stt_en_jasper10x5dr"`
 - `"stt_en_quartznet15x5"`
 - `"QuartzNet15x5Base-En"`
@@ -51,7 +49,7 @@ NVidia default models from nemo toolkit:
 - `"stt_ru_quartznet15x5"`
 - `"stt_zh_citrinet_512"`
 
-external models will be downloaded on demand to `~/.local/share/nemo_stt_models`:
+The plugin downloads external models on demand to `~/.local/share/nemo_stt_models`:
 
 ```python
 {
@@ -116,25 +114,29 @@ external models will be downloaded on demand to `~/.local/share/nemo_stt_models`
 }
 ```
 
+## Related projects
+
+- [ovos-stt-plugin-citrinet](https://github.com/OpenVoiceOS/ovos-stt-plugin-citrinet) - the companion plugin for onnx-converted models
+- [ovos-stt-plugin-HiTZ](https://github.com/OpenVoiceOS/ovos-stt-plugin-HiTZ) - a dedicated plugin for HiTZ Basque models
+
 ## Credits
 
-This plugin was developed by [TigreGotico](https://tigregotico.pt) for OpenVoiceOS under the [ILENIA](https://proyectoilenia.es) project.
+TigreGotico developed this plugin for OpenVoiceOS under the [ILENIA](https://proyectoilenia.es) project.
 
 <img src="img.png" width="128"/>
 
-> This plugin was funded by the Ministerio para la Transformación Digital y de la Función Pública and Plan de Recuperación, Transformación y Resiliencia - Funded by EU – NextGenerationEU within the framework of the project [ILENIA](https://proyectoilenia.es) with reference 2022/TL22/00215337
+> The Ministerio para la Transformación Digital y de la Función Pública and the Plan de Recuperación, Transformación y Resiliencia funded this plugin. The EU funded it through NextGenerationEU, within the framework of the project [ILENIA](https://proyectoilenia.es), reference 2022/TL22/00215337.
 
 <img src="img_1.png"  width="64"/>
 
-[HiTZ/Aholab's Basque Speech-to-Text model Conformer-CTC](https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large) - was trained on a composite dataset comprising of 548 hours of Basque speech. The model was fine-tuned from a pre-trained Spanish stt_es_conformer_ctc_large model. It is a non-autoregressive "large" variant of Conformer, with around 121 million parameters
+The [HiTZ/Aholab Basque speech-to-text model Conformer-CTC](https://huggingface.co/HiTZ/stt_eu_conformer_ctc_large) was trained on a composite dataset of 548 hours of Basque speech. The model was fine-tuned from a pre-trained Spanish `stt_es_conformer_ctc_large` model. It is a non-autoregressive "large" variant of Conformer, with around 121 million parameters.
 
-> This project with reference 2022/TL22/00215335 has been partially funded by the Ministerio de Transformación Digital and by the Plan de Recuperación, Transformación y Resiliencia – Funded by the European Union – NextGenerationEU ILENIA and by the project IkerGaitu funded by the Basque Government. This model was trained at Hyperion, one of the high-performance computing (HPC) systems hosted by the DIPC Supercomputing Center.
+> The Ministerio de Transformación Digital and the Plan de Recuperación, Transformación y Resiliencia partially funded this project, reference 2022/TL22/00215335. The European Union funded it through NextGenerationEU ILENIA, and the Basque Government funded it through the project IkerGaitu. The model was trained at Hyperion, a high-performance computing (HPC) system hosted by the DIPC Supercomputing Center.
 
 <img src="img_3.png"  width="128"/>
 
-> [projecte-aina/stt-ca-citrinet-512](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) was funded by the Generalitat de Catalunya within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
-
+> The Generalitat de Catalunya funded [projecte-aina/stt-ca-citrinet-512](https://huggingface.co/projecte-aina/stt-ca-citrinet-512) within the framework of [Projecte AINA](https://politiquesdigitals.gencat.cat/ca/economia/catalonia-ai/aina).
 
 <img src="img_2.png"  width="64"/>
 
-[NeonGeckoCom](https://github.com/NeonGeckoCom) - [models](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt', 'ca'`
+[NeonGeckoCom](https://github.com/NeonGeckoCom) provides [models](https://huggingface.co/collections/neongeckocom/neon-stt-663ca3c1a55b063463cb0167) for `'en', 'es', 'fr', 'de', 'it', 'uk', 'nl', 'pt', 'ca'`.

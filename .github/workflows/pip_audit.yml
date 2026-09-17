@@ -10,6 +10,22 @@ jobs:
     uses: OpenVoiceOS/gh-automations/.github/workflows/pip-audit.yml@dev
     secrets: inherit
     with:
+      # T-2377: ids the audit reports at dev with no floor that can fix them.
+      # Review the list when nemo_toolkit lifts its caps or nltk releases.
+      # PYSEC-2026-3850: hydra-core 1.3.2, fixed in 1.3.4. nemo_toolkit 3.0.0
+      #   caps hydra-core<=1.3.2.
+      # PYSEC-2026-3624: lightning 2.4.0, fixed in 2.6.6. nemo_toolkit 3.0.0
+      #   caps lightning<=2.4.0.
+      # PYSEC-2026-3972: lightning 2.4.0, the advisory names no fix.
+      # PYSEC-2026-3740: nltk 3.10.3 is the latest release, no fix named.
+      # The first id is the shared default. A caller value replaces the
+      # default, so it is repeated here.
+      ignore_vulns: |
+        GHSA-r9hx-vwmv-q579
+        PYSEC-2026-3850
+        PYSEC-2026-3624
+        PYSEC-2026-3972
+        PYSEC-2026-3740
       # nemo_toolkit[all]/megatron_core only install & import cleanly on 3.10-3.11
       # (3.12+ hit a nvidia-resiliency-ext/grpcio ResolutionImpossible; numba has no 3.14 wheel).
       python_version: '3.11'

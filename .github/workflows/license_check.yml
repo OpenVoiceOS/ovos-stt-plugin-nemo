@@ -20,5 +20,9 @@ jobs:
       # docutils/sentencepiece are permissive but their multi-license metadata strings
       # trip the copyleft detector. paramiko/soxr (LGPL) and text-unidecode (GPL/Artistic)
       # are unmodified imported libraries pulled by the nemo backend.
+      # pycountry (LGPL-2.1) is the same case. huey (MIT) and quack-kernels
+      # (Apache-2.0) ship no license metadata the checker reads ("Error"), and
+      # setuptools 84 lost its classifier so it reads "Error" too; all three are
+      # transitive through nemo_toolkit and permissive at their repositories.
       exclude_packages: >-
-        (?i:^nvidia-.*([=<>!~ @;].*)?$)|(?i:^nvtx([=<>!~ @;].*)?$)|(?i:^cuda-bindings([=<>!~ @;].*)?$)|(?i:^cuda-toolkit([=<>!~ @;].*)?$)|(?i:^leptonai([=<>!~ @;].*)?$)|(?i:^mypy[-_]extensions([=<>!~ @;].*)?$)|(?i:^nemo[-_]run([=<>!~ @;].*)?$)|(?i:^nerfacc([=<>!~ @;].*)?$)|(?i:^docutils([=<>!~ @;].*)?$)|(?i:^paramiko([=<>!~ @;].*)?$)|(?i:^sentencepiece([=<>!~ @;].*)?$)|(?i:^soxr([=<>!~ @;].*)?$)|(?i:^text[-_]unidecode([=<>!~ @;].*)?$)
+        (?i:^pycountry([=<>!~ @;].*)?$)|(?i:^huey([=<>!~ @;].*)?$)|(?i:^quack[-_]kernels([=<>!~ @;].*)?$)|(?i:^setuptools([=<>!~ @;].*)?$)|(?i:^nvidia-.*([=<>!~ @;].*)?$)|(?i:^nvtx([=<>!~ @;].*)?$)|(?i:^cuda-bindings([=<>!~ @;].*)?$)|(?i:^cuda-toolkit([=<>!~ @;].*)?$)|(?i:^leptonai([=<>!~ @;].*)?$)|(?i:^mypy[-_]extensions([=<>!~ @;].*)?$)|(?i:^nemo[-_]run([=<>!~ @;].*)?$)|(?i:^nerfacc([=<>!~ @;].*)?$)|(?i:^docutils([=<>!~ @;].*)?$)|(?i:^paramiko([=<>!~ @;].*)?$)|(?i:^sentencepiece([=<>!~ @;].*)?$)|(?i:^soxr([=<>!~ @;].*)?$)|(?i:^text[-_]unidecode([=<>!~ @;].*)?$)

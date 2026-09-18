@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.6a11](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a11) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a10...0.2.6a11)
+
+**Merged pull requests:**
+
+- ci: exclude huey and setuptools from the licence gate [\#40](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/pull/40) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.6a10](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/tree/0.2.6a10) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-nemo/compare/0.2.6a9...0.2.6a10)

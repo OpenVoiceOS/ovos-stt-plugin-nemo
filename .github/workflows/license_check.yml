@@ -20,5 +20,12 @@ jobs:
       # docutils/sentencepiece are permissive but their multi-license metadata strings
       # trip the copyleft detector. paramiko/soxr (LGPL) and text-unidecode (GPL/Artistic)
       # are unmodified imported libraries pulled by the nemo backend.
+      # Four transitive packages of the nemo backend carry terms the checker cannot
+      # read or must flag, all reviewed against the upstream LICENSE files:
+      # huey (MIT, coleifer/huey), setuptools 79+ (MIT, pypa/setuptools) and
+      # quack-kernels (Apache-2.0, Dao-AILab/quack) ship a LICENSE file and no
+      # classifier or expression, so they report "Error"; torchao is BSD-3-Clause
+      # (pytorch/ao LICENSE) with no metadata, reported "Other"; pycountry is
+      # LGPL-2.1-only, an unmodified imported library like paramiko and soxr above.
       exclude_packages: >-
-        (?i:^nvidia-.*([=<>!~ @;].*)?$)|(?i:^nvtx([=<>!~ @;].*)?$)|(?i:^cuda-bindings([=<>!~ @;].*)?$)|(?i:^cuda-toolkit([=<>!~ @;].*)?$)|(?i:^leptonai([=<>!~ @;].*)?$)|(?i:^mypy[-_]extensions([=<>!~ @;].*)?$)|(?i:^nemo[-_]run([=<>!~ @;].*)?$)|(?i:^nerfacc([=<>!~ @;].*)?$)|(?i:^docutils([=<>!~ @;].*)?$)|(?i:^paramiko([=<>!~ @;].*)?$)|(?i:^sentencepiece([=<>!~ @;].*)?$)|(?i:^soxr([=<>!~ @;].*)?$)|(?i:^text[-_]unidecode([=<>!~ @;].*)?$)
+        (?i:^nvidia-.*([=<>!~ @;].*)?$)|(?i:^nvtx([=<>!~ @;].*)?$)|(?i:^cuda-bindings([=<>!~ @;].*)?$)|(?i:^cuda-toolkit([=<>!~ @;].*)?$)|(?i:^leptonai([=<>!~ @;].*)?$)|(?i:^mypy[-_]extensions([=<>!~ @;].*)?$)|(?i:^nemo[-_]run([=<>!~ @;].*)?$)|(?i:^nerfacc([=<>!~ @;].*)?$)|(?i:^docutils([=<>!~ @;].*)?$)|(?i:^paramiko([=<>!~ @;].*)?$)|(?i:^sentencepiece([=<>!~ @;].*)?$)|(?i:^soxr([=<>!~ @;].*)?$)|(?i:^text[-_]unidecode([=<>!~ @;].*)?$)|(?i:^huey([=<>!~ @;].*)?$)|(?i:^setuptools([=<>!~ @;].*)?$)|(?i:^quack[-_]kernels([=<>!~ @;].*)?$)|(?i:^torchao([=<>!~ @;].*)?$)|(?i:^pycountry([=<>!~ @;].*)?$)

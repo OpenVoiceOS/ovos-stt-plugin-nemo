@@ -1,6 +1,0 @@
-
-ovos-plugin-manager>=1.0.0,<2.0.0
-ovos-utils~=0.0,>=0.0.30
-SpeechRecognition~=3.8
-huggingface_hub>=0.23.2
-nemo_toolkit[all]>=2.2.0
